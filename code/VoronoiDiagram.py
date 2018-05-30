@@ -1,4 +1,4 @@
-from queue import PriorityQueue
+from six.moves.queue import PriorityQueue
 import math
 
 import random
@@ -30,7 +30,7 @@ def getVoronoi(genPts, sz):
   # I'll approximate the Voronoi diagram by a multisource BFS
   while (not q.empty()):
     val = q.get() # get closest point to *some* cluster source
-    pt = val[1]
+    pt = (int(math.floor(val[1][0])), int(math.floor(val[1][1])))
     k = val[2]
 
     # if it's already colored, don't recolor

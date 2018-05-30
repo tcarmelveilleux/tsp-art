@@ -1,3 +1,4 @@
+from __future__ import print_function
 from PIL import Image
 from PIL import ImageStat
 from PIL import ImageDraw
@@ -95,7 +96,8 @@ if __name__ == '__main__':
   sys.setrecursionlimit(6000)
   # bounds check
   if (len(sys.argv) < 2):
-    print('Usage: python3 {} filename', sys.argv[0])
+    print('Usage: python3 {} filename'.format(sys.argv[0]))
+    sys.exit(1)
 
   filename = sys.argv[1]
   print('Attempting to open {}.'.format(filename))
